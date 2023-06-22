@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime-Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recommendationspage.css') }}">
+    <script src="https://kit.fontawesome.com/0cdc049c53.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <ul id="menu">
+                <div class="logo">
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                    <li onclick="btn()"><a href="/">
+                            <h1>Anime Alchemy</h1>
+                        </a></li>
+                </div>
+                <div class="navs">
+                    <li onclick="btn()"><a href="/#trending">
+                            <p>Trending</p>
+                        </a></li>
+                    <li onclick="btn()"><a href="/#recommendation">
+                            <p>Recommendation</p>
+                        </a></li>
+                    <li onclick="btn()"><a href="/#blog">
+                            <p>Blog</p>
+                        </a></li>
+                    <li onclick="btn()"><a href="/#contact">
+                            <p>Contact</p>
+                        </a></li>
+                </div>
+            </ul>
+        </nav>
+        <div class="burger">
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left">
+            <h2>Here Are Some Recommendations</h2>
+        </div>
+        <div class="right">
+            <div class="bxOne">
+                <div class="circleOne">
+
+                </div>
+            </div>
+            <div class="bxTwo">
+                <div class="circleTwo">
+
+                </div>
+            </div>
+            <div class="bxThree">
+                <div class="circleThree">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex">
+        {% for i in Name %}
+        <div class="recommends">
+            <div class="class-box box-card slide-in">
+                <div class="image-box">
+                    <h2>{{i}}</h2>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+
+</html>

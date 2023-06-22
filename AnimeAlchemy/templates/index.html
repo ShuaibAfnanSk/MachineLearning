@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Alchemy</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home-page.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jarallax.css') }}">
+    <script src="https://kit.fontawesome.com/0cdc049c53.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <ul id="menu">
+                <div class="logo">
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                    <li onclick="btn()"><a href="/">
+                            <h1>Anime Alchemy</h1>
+                        </a></li>
+                </div>
+                <div class="navs">
+                    <li onclick="btn()"><a href="#trending">
+                            <p>Trending</p>
+                        </a></li>
+                    <li onclick="btn()"><a href="#recommendation">
+                            <p>Recommendation</p>
+                        </a></li>
+                    <li onclick="btn()"><a href="#blog">
+                            <p>Blog</p>
+                        </a></li>
+                    <li onclick="btn()"><a href="#contact">
+                            <p>Contact</p>
+                        </a></li>
+                </div>
+            </ul>
+        </nav>
+        <div class="burger">
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </div>
+    </div>
+    <div class="home">
+        <div class="hero">
+            <p>An All in One Anime Website.</p>
+        </div>
+        <div class="heroDiv">
+            <div class="heroBx">
+                <h2>Content Based Recommendation</h2>
+                <p>Find Similar Anime's which you might like...</p>
+                <a href="#recommendation"><button> Explore
+                    </button></a>
+            </div>
+            <div class="heroBx">
+                <h2>Collaborative Filtering</h2>
+                <p>Find Out What other People With Similar Tastes are Watching...</p>
+                <a href="#recommendation"><button> Explore
+                    </button></a>
+            </div>
+            <div class="heroBx">
+                <h2>Mood Based Recommendation</h2>
+                <p>Get Recommendation Daily Based on Your Current Mood...</p>
+                <a href="#moodBox"><button> Explore
+                    </button></a>
+            </div>
+            <div class="heroBx">
+                <h2>Genre Based Recommendation</h2>
+                <p>Select Your Favorite Genre and Get Awesome Recommendation's From it...</p>
+                <a href="#genreBox"><button> Explore
+                    </button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ----------------------------------------Trending------------------------------------------- -->
+
+    <div id="trending">
+        <div class="trendingLeft">
+            <h2>Check Out The Trending Anime</h2>
+            <p>Anime's Which are popular and being praised by Community, Anime's which are beiing watched all around the
+                world....</p>
+            <div class="trendingBtn">
+                <a href="/trending"><button>Watch Now</button></a>
+            </div>
+        </div>
+        <div class="trendingRight">
+            <div class="oneBx Bx"></div>
+            <div class="twoBx Bx"></div>
+            <div class="threeBx Bx"></div>
+        </div>
+    </div>
+
+    <!-- --------------------------------recommendations----------------------------------- -->
+    <div id="recommendation">
+        <div class="recommendDiv">
+            <div class="recommendBx">
+                <div class="bxTxt">
+                    <h4>Anime Alchemy's</h4>
+                    <h2>Content Based & Collaborative Filtering</h2>
+                    <p>Search for your favorite anime and get recommended, Make sure you search the same name as listed
+                        in My Anime List website and anime must be released before 2019.</p>
+                </div>
+                <div class="form">
+                    <form action="/recommend-anime" method="post">
+                        <input name='user_input' type="text" class="form-control"
+                            placeholder="Search Your Favorite Anime"><br>
+                        <input type="submit" class="button" value="Recommend" />
+                    </form>
+                </div>
+            </div>
+            <div class="recommendImg">
+
+            </div>
+        </div>
+        <div id="moodBox">
+            <div class="bxLeft">
+                <div class="moodTxt">
+                    <div class="gabimaru">
+
+                    </div>
+                </div>
+                <div class="moodContent">
+                    <h4>What's your mood today</h4>
+                    <p>Pick out Your current mood and get recommendations accordingly..</p>
+                </div>
+            </div>
+            <div class="bxRight">
+                <div class="moodImgalt Imgalt">
+
+                </div>
+                <div class="moodImg">
+
+                </div>
+            </div>
+        </div>
+        <div class="recommends">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="static\images\happy.png">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="static/css/images/emoji4.png" alt="">
+                        <p>HAPPY</p>
+                        <a href="/comedy"><button class="cardBtn">Recommend</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="static\images\romanctic.jpeg">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="static/css/images/emoji3.png" alt="">
+                        <p>ROMANTIC</p>
+                        <a href="/romance"><button class="cardBtn">Recommend</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="static\css\images\shocked.jpg">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="static/css/images/emoji8.png" alt="">
+                        <p>SURPRISED</p>
+                        <a href="/surprised"><button class="cardBtn">Recommend</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="static\images\fearr.jpg">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="static/css/images/fear.svg" alt="">
+                        <p>FEAR</p>
+                        <a href="/fear"><button class="cardBtn">Recommend</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="static\images\sad.jpg">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="static/css/images/emoji2.png" alt="">
+                        <p>SAD</p>
+                        <a href="/drama"><button class="cardBtn">Recommend</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="static\css\images\rage.jpg">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="static/css/images/emoji1.png" alt="">
+                        <p>ANGRY</p>
+                        <a href="/action"><button class="cardBtn">Recommend</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="genreBox">
+            <div class="bxLeft">
+                <div class="moodTxt">
+                    <div class="kamado">
+
+                    </div>
+                </div>
+                <div class="genreContent">
+                    <h4>What's your Favorite Genre</h4>
+                    <p>Pick out Your favorite genre and get recommendations accordingly..</p>
+                </div>
+            </div>
+            <div class="genrebxRight">
+                <div class="genreImgalt Imgalt">
+
+                </div>
+                <div class="moodImg gonpachiro">
+
+                </div>
+            </div>
+        </div>
+        <div class="categoryDiv">
+            <div class="categoryBx">
+                <div>
+                    <h2>Action/Shonen</h2>
+                    <a href="/action"><button class="cardBtn">Recommend</button></a>
+                </div>
+            </div>
+            <div class="categoryBx">
+                <div>
+                    <h2>Comedy/Slice-of-Life</h2>
+                    <a href="/comedy"><button class="cardBtn">Recommend</button></a>
+                </div>
+            </div>
+            <div class="categoryBx">
+                <div>
+                    <h2>Drama/Tragedy</h2>
+                    <a href="/drama"><button class="cardBtn">Recommend</button></a>
+                </div>
+            </div>
+            <div class="categoryBx">
+                <div>
+                    <h2>Sports</h2>
+                    <a href="/sports"><button class="cardBtn">Recommend</button></a>
+                </div>
+            </div>
+            <div class="categoryBx">
+                <div>
+                    <h2>Sci-Fi/Space</h2>
+                    <a href="/scifi"><button class="cardBtn">Recommend</button></a>
+                </div>
+            </div>
+            <div class="categoryBx">
+                <div>
+                    <h2>Mecha/Military</h2>
+                    <a href="/mecha"><button class="cardBtn">Recommend</button></a>
+                </div>
+            </div>
+            <div class="categoryBx">
+                <div>
+                    <h2>Supernatural/Magic</h2>
+                    <a href="/supernatural"><button class="cardBtn">Recommend</button></a>
+                </div>
+            </div>
+            <div class="categoryBx">
+                <div>
+                    <h2>Adventure</h2>
+                    <a href="/adventure"><button class="cardBtn">Recommend</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- -----------------------------------blog------------------------------------ -->
+        <div id="blog">
+            <div class="holder">
+                <div class="slider">
+                    <div class="slides">
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <input type="radio" name="radio-btn" id="radio5">
+
+                        <div class="slide first">
+                            <img src="static/images/seven-min.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="static/images/mobb.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="static/images/bocchi-min.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="static/images/spyx-min.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="static/images/cyberpunk-min.jpg">
+                        </div>
+
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                            <div class="auto-btn5"></div>
+                        </div>
+                    </div>
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        <label for="radio5" class="manual-btn"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card-holder">
+                <div class="blog-struct">
+                    <img src="static/css/images/974738.jpg" alt="">
+                    <div class="card-down" data-jarallax-element="-50 50">
+                        <div class="down1">
+                            <h2>Gintama</h2>
+                            <p>action, adventure, comedy, drama</p>
+                        </div>
+                        <div class="down2">
+                            <div>
+                                <h2>Score</h2>
+                                <p>8.941</p>
+                            </div>
+                            <div>
+                                <h2>Seasons</h2>
+                                <p>9</p>
+                            </div>
+                            <div>
+                                <h2>Episodes</h2>
+                                <p>367</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="card-up" data-jarallax-element="-25 0">
+                            <p>"Gintama" is a Japanese anime based on the manga series by Hideaki Sorachi. It is set in
+                                an
+                                alternate version of Edo-period Japan where aliens have invaded the country. The anime
+                                combines humor, action, and drama with a large cast of memorable characters, making it a
+                                highly entertaining and unique series.</p>
+                            <a href="https://myanimelist.net/anime/918/Gintama"><button>Know More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-struct">
+                    <img src="static/css/images/sama-min.jpg" alt="">
+                    <div class="card-down" data-jarallax-element="-50 50">
+                        <div class="down1">
+                            <h2>Kaguya-sama: Love Is War</h2>
+                            <p>romance, comedy</p>
+                        </div>
+                        <div class="down2">
+                            <div>
+                                <h2>Score</h2>
+                                <p>8.5</p>
+                            </div>
+                            <div>
+                                <h2>Seasons</h2>
+                                <p>3</p>
+                            </div>
+                            <div>
+                                <h2>Episodes</h2>
+                                <p>37</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="card-up" data-jarallax-element="-25 0">
+                            <p>"Kaguya-sama: Love is War" is a Japanese romantic comedy anime based on the manga series
+                                by
+                                Aka Akasaka. It follows the story of two high school students, Kaguya Shinomiya and
+                                Miyuki
+                                Shirogane, who engage in psychological battles to make the other confess their love. The
+                                anime is known for its clever dialogue and endearing characters.</p>
+                            <a
+                                href="https://myanimelist.net/anime/37999/Kaguya-sama_wa_Kokurasetai__Tensai-tachi_no_Renai_Zunousen"><button>Know
+                                    More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-struct">
+                    <img src="static/css/images/football-min.jpg" alt="">
+                    <div class="card-down" data-jarallax-element="-50 50">
+                        <div class="down1">
+                            <h2>BlueLock</h2>
+                            <p>shounen, sports</p>
+                        </div>
+                        <div class="down2">
+                            <div>
+                                <h2>Score</h2>
+                                <p>8.4</p>
+                            </div>
+                            <div>
+                                <h2>Seasons</h2>
+                                <p>1</p>
+                            </div>
+                            <div>
+                                <h2>Episodes</h2>
+                                <p>24</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="card-up" data-jarallax-element="-25 0">
+                            <p>"Blue Lock" is a Japanese anime based on the manga series by Muneyuki Kaneshiro and
+                                Yusuke
+                                Nomura. It follows the story of a group of high school soccer players who participate in
+                                a
+                                unique training program to create a striker capable of leading the Japanese national
+                                team to
+                                victory. The anime is known for its intense soccer action and character development.</p>
+                            <a href="https://myanimelist.net/anime/49596/Blue_Lock"><button>Know More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-struct">
+                    <img src="static/css/images/man-min.jpg" alt="">
+                    <div class="card-down" data-jarallax-element="-50 50">
+                        <div class="down1">
+                            <h2>ChainsawMan</h2>
+                            <p>action, horror, dark fantasy</p>
+                        </div>
+                        <div class="down2">
+                            <div>
+                                <h2>Score</h2>
+                                <p>8.6</p>
+                            </div>
+                            <div>
+                                <h2>Seasons</h2>
+                                <p>1</p>
+                            </div>
+                            <div>
+                                <h2>Episodes</h2>
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="card-up" data-jarallax-element="-25 0">
+                            <p>"Chainsaw Man" is a Japanese anime based on the manga series by Tatsuki Fujimoto. It
+                                follows
+                                the story of Denji, a young man who becomes a demon hunter after merging with a chainsaw
+                                demon. The anime is known for its gory and intense action scenes, unique storytelling,
+                                and
+                                memorable characters.</p>
+                            <a href="https://myanimelist.net/anime/44511/Chainsaw_Man"><button>Know More</button></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="blog-struct">
+                    <img src="static/css/images/demon-min.jpg" class="imghover" alt="">
+                    <div class="card-down" data-jarallax-element="-50 50">
+                        <div class="down1">
+                            <h2>Demon Slayer: Kimetsu no Yaiba</h2>
+                            <p>action, adventure, fantasy, thriller</p>
+                        </div>
+                        <div class="down2">
+                            <div>
+                                <h2>Score</h2>
+                                <p>8.7</p>
+                            </div>
+                            <div>
+                                <h2>Seasons</h2>
+                                <p>3</p>
+                            </div>
+                            <div>
+                                <h2>Episodes</h2>
+                                <p>44</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="card-up" data-jarallax-element="-25 0">
+                            <p>"Demon Slayer: Kimetsu no Yaiba" is a Japanese anime based on the manga series by
+                                Koyoharu
+                                Gotouge. It follows the story of Tanjiro Kamado, a young boy who becomes a demon slayer
+                                after his family is killed and his younger sister, Nezuko, is turned into a demon. The
+                                anime
+                                is known for its stunning animation, emotional storytelling, and intense action scenes.
+                            </p>
+                            <a href="https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba"><button>Know
+                                    More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-struct">
+                    <img src="static/css/images/jujutsu.jpg" alt="">
+                    <div class="card-down" data-jarallax-element="-50 50">
+                        <div class="down1">
+                            <h2>Jujutsu Kaisen</h2>
+                            <p>action, adventure, fantasy, thriller</p>
+                        </div>
+                        <div class="down2">
+                            <div>
+                                <h2>Score</h2>
+                                <p>8.651</p>
+                            </div>
+                            <div>
+                                <h2>Seasons</h2>
+                                <p>1</p>
+                            </div>
+                            <div>
+                                <h2>Episodes</h2>
+                                <p>24</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="card-up" data-jarallax-element="-25 0">
+                            <p>"Jujutsu Kaisen" is a Japanese anime based on the manga series by Gege Akutami. It
+                                follows
+                                the story of Yuji Itadori, a high school student who becomes a jujutsu sorcerer after
+                                ingesting a cursed object. The anime is known for its supernatural themes, intense
+                                action
+                                scenes, and complex characters.</p>
+                            <a href="https://myanimelist.net/anime/40748/Jujutsu_Kaisen"><button>Know More</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="altLeft">
+                <div class="altUp">
+                    <h1>ALCHEMY</h1>
+                </div>
+            </div>
+            <div class="favHolder">
+                <div class="favChars">
+                    <div class="charImg" data-jarallax-element="15 0">
+                        <img src="static/css/images/background4-min.jpg" alt="">
+                    </div>
+                    <div class="charBx" data-jarallax-element="-15 0">
+                        <img src="static/css/images/aki.webp" alt="">
+                        <h3>ChainsawMan</h3>
+                    </div>
+                    <div class="charDet">
+                        <h2>Hayakawa Akii</h2>
+                        <p>Topknot</p>
+                    </div>
+                </div>
+                <div class="favChars">
+                    <div class="charImg" data-jarallax-element="15 0">
+                        <img src="static/css/images/ginsan.jpg" alt="">
+                    </div>
+                    <div class="charBx charBx2" data-jarallax-element="-15 0">
+                        <img src="static/css/images/gin.jpg" alt="">
+                        <h3>Gintama</h3>
+                    </div>
+                    <div class="charDet">
+                        <h2>Sakata Gintoki</h2>
+                        <p>White Yaksha</p>
+                    </div>
+                </div>
+                <div class="favChars">
+                    <div class="charImg" data-jarallax-element="15 0">
+                        <img src="static/css/images/sensei-min.jpg" alt="">
+                    </div>
+                    <div class="charBx charBx3" data-jarallax-element="-15 0">
+                        <img src="static/css/images/curse-min.jpg" alt="">
+                        <h3>Jujutsu Kaisen</h3>
+                    </div>
+                    <div class="charDet">
+                        <h2>Satoru Gojo</h2>
+                        <p>Gojo</p>
+                    </div>
+                </div>
+                <div class="favChars">
+                    <div class="charImg" data-jarallax-element="15 0">
+                        <img src="static/css/images/marine.jpg" alt="">
+                    </div>
+                    <div class="charBx charBx4" data-jarallax-element="-15 0">
+                        <img src="static/css/images/hoshino-min.png" alt="">
+                        <h3>Oshi No Ko</h3>
+                    </div>
+                    <div class="charDet">
+                        <h2>Aqua Hoshino</h2>
+                        <p>Aqua</p>
+                    </div>
+                </div>
+                <div class="favChars">
+                    <div class="charImg" data-jarallax-element="15 0">
+                        <img src="static/css/images/isagi-min.jpg" alt="">
+                    </div>
+                    <div class="charBx charBx5" data-jarallax-element="-15 0">
+                        <img src="static/css/images/yoichi.jpg" alt="">
+                        <h3>BlueLock</h3>
+                    </div>
+                    <div class="charDet">
+                        <h2>Isagi Yoichi</h2>
+                        <p>Striker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------------contact-------------------------------------- -->
+
+        <div id="contact">
+            <div class="container-contact">
+                <div class="right">
+                    <div class="head-para">
+                        <h2>HELLO THERE !</h2>
+                        <p>Let us Know More About You</p>
+                    </div>
+                    <div class="form-holder">
+                        <input type="text" class="input" placeholder="FirstName">
+                        <input type="text" class="input" placeholder="LastName">
+                        <input type="text" class="input" placeholder="Email">
+                        <input type="text" class="input" placeholder="Phone">
+                        <textarea name="" id="" cols="30" rows="10" class="message" placeholder="Message"></textarea>
+                    </div>
+                    <input type="button" value="Submit" class="submit">
+                </div>
+            </div>
+        </div>
+
+        <!-- <footer>
+                <div class="footerLeft">
+                    <div class="footerBx">
+                        <h2>Anime Alchemy</h2>
+                        <p>An all in One Anime Website</p>
+                    </div>
+                    <div class="footerBx">
+                        <div class="footerDiv">
+                            <a href="#header">Home</a>
+                            <a href="#trending">Trending</a>
+                            <a href="#recommendation">Recommendation</a>
+                            <a href="#blog">Blog</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="footerDiv">
+                            <p><i class="fa-solid fa-user"></i>Shuaib Afnan</p>
+                            <p><i class="fa-solid fa-phone"></i>7075818209</p>
+                            <p><i class="fa-solid fa-envelope"></i>atomafnan@gmail.com</p>
+                            <p><i class="fa-solid fa-location-dot"></i>Andhra Pradesh, India</p>
+                        </div>
+                    </div>
+                    <div class="footerBx">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-dribbble"></i>
+                    </div>
+                </div>
+                <div class="footerRight">
+                    <h2>Get Updates On Fun Stuff You Probably Want to Know About in YOur Inbox</h2>
+                    <div>
+                        <input type="email" name="" id="" class="email" placeholder="Email">
+                        <button>Subscribe</button>
+                    </div>
+                    <p>Copyright © 2023 Anime Alchemy Inc. All rights reserved.</p>
+                </div>
+            </footer> -->
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jarallax.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jarallax-element.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/vanilla-tilt.min.js') }}"></script>
+        <script>
+            var counter = 1;
+            setInterval(function () {
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if (counter > 5) {
+                    counter = 1;
+                }
+            }, 3000);
+
+            VanillaTilt.init(document.querySelectorAll(".emoji"), {
+                max: 35,
+                speed: 500,
+            });
+
+            jarallax(document.querySelectorAll('.jarallax'), {
+                speed: 2.5,
+            })
+
+        </script>
+
+</body>
+
+</html>
