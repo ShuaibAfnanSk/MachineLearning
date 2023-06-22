@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Puff';
+    src: url(images/DynaPuff-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Puff';
+}
+
+.page_404 {
+    padding: 40px 0;
+    background: #fff;
+}
+
+.page_404 img {
+    width: 100%;
+}
+
+.four_zero_four_bg {
+    background: url(images/error.gif);
+    height: 400px;
+    background-position: center;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #39ac31;
+    display: inline-block;
+}
+
+.context_box_404 {
+    margin-top: -50px;
+}
